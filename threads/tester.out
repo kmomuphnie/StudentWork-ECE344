@@ -1,0 +1,5 @@
+preemptive test, 17, 20
+wakeup test, 10, 10
+wakeup all test, 6, 6
+lock test, 12, 12
+cv test, 12, 12
