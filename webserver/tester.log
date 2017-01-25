@@ -1,0 +1,1225 @@
++ '[' 1 -ne 1 -a 1 -ne 2 ']'
++ '[' 1 -eq 2 ']'
++ PORT=8233
++ FILESET=fileset_dir
++ ./fileset -d fileset_dir
++ date
+Fri Nov 21 09:19:41 EST 2014
++ rm -f plot-threads.out
++ echo 'Running threads experiment. Output goes to plot-threads.out'
+Running threads experiment. Output goes to plot-threads.out
++ for threads in 0 1 2 4 8 16 32 64 128
++ echo -n '0, '
++ ./run-one-experiment 8233 0 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=22165
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ ./server 8233 0 8 0
++ i=1
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 22165
++ exit 0
++ for threads in 0 1 2 4 8 16 32 64 128
++ echo -n '1, '
++ ./run-one-experiment 8233 1 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=22333
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ ./server 8233 1 8 0
++ i=1
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 22333
++ exit 0
++ for threads in 0 1 2 4 8 16 32 64 128
++ echo -n '2, '
++ ./run-one-experiment 8233 2 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=22577
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ ./server 8233 2 8 0
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 22577
++ exit 0
++ for threads in 0 1 2 4 8 16 32 64 128
++ echo -n '4, '
++ ./run-one-experiment 8233 4 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=22694
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ ./server 8233 4 8 0
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 22694
++ exit 0
++ for threads in 0 1 2 4 8 16 32 64 128
++ echo -n '8, '
++ ./run-one-experiment 8233 8 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=22813
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ n=10
++ ./server 8233 8 8 0
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 22813
++ exit 0
++ for threads in 0 1 2 4 8 16 32 64 128
++ echo -n '16, '
++ ./run-one-experiment 8233 16 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=22936
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ ./server 8233 16 8 0
++ i=1
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 22936
++ exit 0
++ for threads in 0 1 2 4 8 16 32 64 128
++ echo -n '32, '
++ ./run-one-experiment 8233 32 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=23067
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ ./server 8233 32 8 0
++ i=1
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 23067
++ exit 0
++ for threads in 0 1 2 4 8 16 32 64 128
++ echo -n '64, '
++ ./run-one-experiment 8233 64 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=23214
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ ./server 8233 64 8 0
++ i=1
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 23214
++ exit 0
++ for threads in 0 1 2 4 8 16 32 64 128
++ echo -n '128, '
++ ./run-one-experiment 8233 128 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=23393
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ ./server 8233 128 8 0
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 23393
++ exit 0
++ echo 'Threads experiment done.'
+Threads experiment done.
++ date
+Fri Nov 21 09:29:37 EST 2014
++ rm -f plot-requests.out
++ echo 'Running requests experiment. Output goes to plot-requests.out'
+Running requests experiment. Output goes to plot-requests.out
++ for requests in 1 2 4 8 16 32
++ echo -n '1, '
++ ./run-one-experiment 8233 8 1 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=23638
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ ./server 8233 8 1 0
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 23638
++ exit 0
++ for requests in 1 2 4 8 16 32
++ echo -n '2, '
++ ./run-one-experiment 8233 8 2 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=23761
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ ./server 8233 8 2 0
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 23761
++ exit 0
++ for requests in 1 2 4 8 16 32
++ echo -n '4, '
++ ./run-one-experiment 8233 8 4 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=23884
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ ./server 8233 8 4 0
++ i=1
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 23884
++ exit 0
++ for requests in 1 2 4 8 16 32
++ echo -n '8, '
++ ./run-one-experiment 8233 8 8 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=24007
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ ./server 8233 8 8 0
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 24007
++ exit 0
++ for requests in 1 2 4 8 16 32
++ echo -n '16, '
++ ./run-one-experiment 8233 8 16 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=24130
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ n=10
++ sleep 1
++ ./server 8233 8 16 0
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 24130
++ exit 0
++ for requests in 1 2 4 8 16 32
++ echo -n '32, '
++ ./run-one-experiment 8233 8 32 0 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=24253
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ n=10
++ sleep 1
++ ./server 8233 8 32 0
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 24253
++ exit 0
++ echo 'Requests experiment done.'
+Requests experiment done.
++ date
+Fri Nov 21 09:32:06 EST 2014
++ '[' -n '' ']'
++ rm -f plot-cachesize.out
++ echo 'Running cachesize experiment. Output goes to plot-cachesize.out'
+Running cachesize experiment. Output goes to plot-cachesize.out
++ for cachesize in 16384 65536 262144 1048576 4194304 16777216
++ echo -n '16384, '
++ ./run-one-experiment 8233 8 8 16384 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=24378
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ ./server 8233 8 8 16384
++ i=1
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 24378
++ exit 0
++ for cachesize in 16384 65536 262144 1048576 4194304 16777216
++ echo -n '65536, '
++ ./run-one-experiment 8233 8 8 65536 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=24503
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ ./server 8233 8 8 65536
++ i=1
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 24503
++ exit 0
++ for cachesize in 16384 65536 262144 1048576 4194304 16777216
++ echo -n '262144, '
++ ./run-one-experiment 8233 8 8 262144 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=24626
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ ./server 8233 8 8 262144
++ i=1
++ n=10
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 24626
++ exit 0
++ for cachesize in 16384 65536 262144 1048576 4194304 16777216
++ echo -n '1048576, '
++ ./run-one-experiment 8233 8 8 1048576 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=24760
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ n=10
++ ./server 8233 8 8 1048576
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 24760
++ exit 0
++ for cachesize in 16384 65536 262144 1048576 4194304 16777216
++ echo -n '4194304, '
++ ./run-one-experiment 8233 8 8 4194304 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=24883
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ n=10
++ ./server 8233 8 8 4194304
++ sleep 1
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 24883
++ exit 0
++ for cachesize in 16384 65536 262144 1048576 4194304 16777216
++ echo -n '16777216, '
++ ./run-one-experiment 8233 8 8 16777216 fileset_dir.idx
++ '[' 5 -ne 5 ']'
++ SERVER_PID=25006
++ trap 'kill -9 $SERVER_PID 2> /dev/null; exit 1' 1 2 3 9 15
++ SUM=0
++ i=1
++ n=10
++ sleep 1
++ ./server 8233 8 8 16777216
++ FILESET=fileset_dir.idx
++ rm -f run.out
++ '[' 1 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=2
++ '[' 2 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=3
++ '[' 3 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=4
++ '[' 4 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=5
++ '[' 5 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=6
++ '[' 6 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=7
++ '[' 7 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=8
++ '[' 8 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=9
++ '[' 9 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=10
++ '[' 10 -le 10 ']'
++ ./client -t localhost 8233 100 10 fileset_dir.idx
++ '[' 0 -ne 0 ']'
++ i=11
++ '[' 11 -le 10 ']'
++ awk '{sum = sum + $4} END {print sum/NR}' run.out
++ kill -9 25006
++ exit 0
++ echo 'Cachesize experiment done.'
+Cachesize experiment done.
++ date
