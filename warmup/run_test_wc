@@ -1,0 +1,20 @@
+#!/bin/bash
+
+if [ ! -x ./test_wc ]; then
+   echo "./test_wc not found" 1>&2
+   exit 1
+fi
+
+./test_wc wc-input.txt | LC_ALL=C sort > wc.out
+cmp -s wc-output.txt wc.out
+
+if [ $? -ne 0 ]; then
+    echo "test_wc produced the wrong output. See wc.out" 1>&2
+    exit 1
+fi
+
+echo "OK"
+exit 0
+
+
+
